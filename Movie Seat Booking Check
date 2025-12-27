@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+
+public class MovieBooking {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> bookedSeats = new ArrayList<>();
+        bookedSeats.add(5);
+        bookedSeats.add(12);
+        bookedSeats.add(18);
+
+        int seatToCheck = 12;
+
+        if (bookedSeats.contains(seatToCheck))
+            System.out.println("Seat already booked");
+        else
+            System.out.println("Seat available");
+    }
+}
