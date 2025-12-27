@@ -1,0 +1,23 @@
+interface Delivery {
+    int getCharge();
+}
+
+class NormalDelivery implements Delivery {
+    public int getCharge() {
+        return 30;
+    }
+}
+
+class ExpressDelivery implements Delivery {
+    public int getCharge() {
+        return 60;
+    }
+}
+
+public class FoodDeliveryApp {
+    public static void main(String[] args) {
+
+        Delivery d = new ExpressDelivery();
+        System.out.println("Delivery Charge: ₹" + d.getCharge());
+    }
+}
