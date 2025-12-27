@@ -1,0 +1,22 @@
+class EligibilityException extends Exception {
+    EligibilityException(String msg) {
+        super(msg);
+    }
+}
+
+public class ExamEligibility {
+    public static void main(String[] args) {
+
+        int attendance = 65;
+
+        try {
+            if (attendance < 75)
+                throw new EligibilityException("Not Eligible for Exam");
+
+            System.out.println("Eligible for Exam");
+
+        } catch (EligibilityException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
