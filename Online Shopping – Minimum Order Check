@@ -1,0 +1,22 @@
+class MinimumOrderException extends Exception {
+    MinimumOrderException(String msg) {
+        super(msg);
+    }
+}
+
+public class ShoppingCheckout {
+
+    static void checkOut(int amount) throws MinimumOrderException {
+        if (amount < 500)
+            throw new MinimumOrderException("Minimum order is ₹500");
+        System.out.println("Order placed successfully");
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkOut(350);
+        } catch (MinimumOrderException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
