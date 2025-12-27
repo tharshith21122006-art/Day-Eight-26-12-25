@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class InsufficientBalanceException extends Exception {
+    public InsufficientBalanceException(String msg) {
+        super(msg);
+    }
+}
+
+// Account class (OOPS concept)
+class Account {
+    private double balance = 5000;   // initial balance
+
+    void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Invalid Amount");
+        }
+        if (amount > balance) {
+            throw new InsufficientBalanceException("Insufficient Balance");
+        }
+        balance -= amount;
+        System.out.println("Withdrawal Successful");
+        System.out.println("Remaining Balance: " + balance);
+    }
+}
+
+public class ATMSystem {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Account acc = new Account();
+
+        try {
+            System.out.print("Enter withdrawal amount: ");
+            double amt = sc.nextDouble();
+
+            acc.withdraw(amt);
+
+        } catch (InsufficientBalanceException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Invalid Input");
+        }
+    }
+}
