@@ -1,0 +1,16 @@
+class AgeNotAllowedException extends Exception {
+    AgeNotAllowedException(String msg) { super(msg); }
+}
+
+public class MovieEntry {
+    public static void main(String[] args) {
+        int age = 16;
+        try {
+            if (age < 18)
+                throw new AgeNotAllowedException("Entry not allowed");
+            System.out.println("Entry allowed");
+        } catch (AgeNotAllowedException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
