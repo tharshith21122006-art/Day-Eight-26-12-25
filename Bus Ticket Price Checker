@@ -1,0 +1,21 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class BusTicketChecker {
+    public static void main(String[] args) {
+
+        HashMap<Integer, Integer> routePrice = new HashMap<>();
+        routePrice.put(101, 45);
+        routePrice.put(102, 60);
+        routePrice.put(103, 80);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter route number: ");
+        int route = sc.nextInt();
+
+        if (routePrice.containsKey(route))
+            System.out.println("Ticket Price: ₹" + routePrice.get(route));
+        else
+            System.out.println("Route not found");
+    }
+}
