@@ -1,0 +1,15 @@
+import java.io.FileWriter;
+
+public class LoginLogger {
+    public static void main(String[] args) {
+
+        try {
+            FileWriter fw = new FileWriter("login.txt", true);
+            fw.write("User logged in\n");
+            fw.close();
+            System.out.println("Login recorded");
+        } catch (Exception e) {
+            System.out.println("File error");
+        }
+    }
+}
